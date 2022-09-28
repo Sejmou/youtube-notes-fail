@@ -1,10 +1,20 @@
-# Yerba
+# YouTube Notes
 
-![assets/example.png](assets/example.png)
+In this repo, I want to create a desktop app that makes it possible to take notes while watching YouTube videos (especially educational ones).
 
-An Electron Monorepo Demo
+## Planned features
 
-Uses:
+- [ ] Take screenshots
+- [ ] Add notes to screenshots
+- [ ] Generate PDF from screenshots + notes
+- [ ] OCR for screenshots (useful when taking screenshots of text, e.g. slides)
+- [ ] Browse
+
+## Implementation details
+
+This thing is an Electron desktop app that makes use of Next.js and Vite internally. Thanks to the [yerba](https://github.com/TheoBr/yerba) template it was *really* easy to set up.
+
+The project uses
 
 - Next.js
 - Typescript
@@ -12,16 +22,17 @@ Uses:
 - Turborepo
 - Vite (for Electron builds)
 
+### Why not a traditional Web App?
+
+I don't have the budget to set up server infrastructure to store images and PDFs. So, I guess using the local file system is the next best option. Unfortunately, there's currently no hassle-free option for file system access in a traditional web app (e.g. the [File System Access API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API) looks promising, but browser support is really bad and it still requires a user to allow folder access on every page refresh, which is a suboptimal user experience, imo).
+
+### Why Next.js in a desktop app!?
+
+I know, one of the main strenghts of Next.js is SSR and SSG, which are both completely irrelevant for desktop environments. But I decided to use it because of other advantages such as the simple communication with the backend (especially when using [tRPC]()) and the fact that I can just use NextAuth for Google/YouTube logins and account access (which I had already figured out for another project and is something this app might benefit from sooner or later).
+
 ## Getting Started
 
 ```bash
 npm install
 npm run dev
 ```
-
-## Prior work
-
-Most of this code is generously borrowed from the following
-
-- [vite-electron-builder](https://github.com/cawa-93/vite-electron-builder)
-- [Turborepo basic example](https://github.com/vercel/turborepo/tree/main/examples/basic)
