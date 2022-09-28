@@ -12,7 +12,7 @@ In this repo, I want to create a desktop app that makes it possible to take note
 
 ## Implementation details
 
-This thing is an Electron desktop app that makes use of Next.js and Vite internally. Thanks to the [yerba](https://github.com/TheoBr/yerba) template it was *really* easy to set up.
+This thing should be an Electron desktop app that makes use of Next.js and Vite internally. with the [yerba](https://github.com/TheoBr/yerba) template it should have been easy to set up, but I didn't even manage to get it running locally on my Linux machine due to some weird GPU-related errors amongst other errors I didn't understand lol
 
 The project uses
 
